@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <meta name="description" content="This is a description of my webpage.">
+    <meta name="keywords" content="webpage, example, HTML, meta tags">
+    <script type="module" src="app.js" defer></script>
+    <link href="../text/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="flex bg-orange-200 h-[100vh] md:p-4 items-center relative">
+        <div class=" md:w-[400px] md:h-[400px] w-[390px] h-[390px] bg-black absolute top-1  rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] w-[390px] h-[390px] bg-red-500 absolute bottom-1 rounded-full"></div>
+        <div
+            class="md:w-[400px] md:h-[400px] top-56 bg-gray-400 w-[390px] h-[390px] md:bg-white absolute md:ml-[550px] md:top-1 rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] bg-amber-600 absolute bottom-56  ml-[450px] rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] bg-green-800 absolute ml-[1000px] mt-[1px] top-1 rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] bg-teal-600 absolute bottom-1 ml-[900px] rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] bg-violet-500 absolute ml-[1500px] top-1 rounded-full">
+        </div>
+        <div class="md:w-[400px] md:h-[400px] bg-green-400 absolute bottom-56  ml-[1200px] rounded-full"></div>
+        <div class="md:w-[400px] md:h-[400px] bg-black absolute bottom-1 ml-[1500px] rounded-full">
+        </div>
+        <div class="h-full w-full relative rounded-[32px]">
+            <header class="absolute flex h-32 items-center justify-center space-y-20 mt-[400px] w-full">
+                <div class="">
+                    <h1 class="text-4xl text-orange-900 font-extrabold uppercase">Event Planner</h1>
+                </div>
+            </header>
+            <main class="relative">
+                <div class="relative flex-1">
+                    <div class="absolute md:mt-[600px] mt-[500px] w-full h-[311px] rounded-b-[32px]">
+                        <div class="p-0 h-[75%] md:h-[55%] flex justify-between items-center">
+                            <div class="w-full h-full lg:flex lg:justify-between lg:items-center p-2 space-y-7">
+                                <input type="text" placeholder="first-array, list of numbers seperated by commas"
+                                    id="first" class="w-full p-9 mr-2 rounded-3xl bg-slate-300">
+                                <input type="text" placeholder="second-array, list of numbers seperated by commas"
+                                    id="second" class="w-full p-9 rounded-3xl bg-slate-300">
+                            </div>
+                        </div>
+                        <div class="h-[25%] md:h-[45%] w-full items-center mt-2">
+                            <button
+                                class="p-4 items-center justify-center w-full lg:w-1/2 lg:p-12 lg:rounded-full uppercase lg:ml-[420px] bg-[#7fbd1c] text-slate-900 border-opacity-0 hover:bg-lime-900 lg:hover:bg-green-900 hover:border-4 hover:border-green-400 hover:text-yellow-300 text-2xl lg:font-bold font-semibold rounded-3xl"
+                                type="button" id="button">Click Me!</button>
+                        </div>
+                    </div>
+                    <div class="bg-stone-600 md:bg-opacity-70 items-center flex justify-center rounded-b-[60px] absolute h-[450px] w-full p-5"
+                        id="screen">
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
