@@ -3,22 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "private": "true",
-  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
-    "build": "npx webpack --config webpack.config.js",
-    "dev": "webpack --watch"
+    "dev": "webpack serve",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^8.0.1",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.2.7",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }

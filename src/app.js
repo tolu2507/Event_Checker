@@ -1,3 +1,5 @@
+import "./style.css";
+
 const first = document.getElementById("first");
 const second = document.getElementById("second");
 const button = document.getElementById("button");
@@ -169,7 +171,7 @@ function checkIfSecondArrayIsGreaterThanFirstArray(array1 = [], array2 = []) {
 button.addEventListener("click", () => {
   const First = first.value;
   const Second = second.value;
-  screen.innerHTML = ""
+  screen.innerHTML = "";
   if (!First || !Second) {
     alert("Please enter a value of numbers sepersted with commas");
   } else if (typeof First === "string" && typeof Second === "string") {

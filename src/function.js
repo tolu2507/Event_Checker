@@ -161,6 +161,8 @@ function checkIfSecondArrayIsGreaterThanFirstArray(array1 = [], array2 = []) {
   return count === len ? true : false;
 }
 
+// "build": "npx webpack --config webpack.config.js",
+
 export {
   createArray,
   filterArray,
