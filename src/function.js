@@ -1,4 +1,4 @@
-function createArray(A, B) {
+function createArrays(A, B) {
   if (A.length === 0 && B.length === 0) {
     throw Error(`
           ============================================================================
@@ -161,10 +161,78 @@ function checkIfSecondArrayIsGreaterThanFirstArray(array1 = [], array2 = []) {
   return count === len ? true : false;
 }
 
+function getEvents(a = [], c = []) {
+  const something = createArray(a, c);
+  const arr = something.sort((a, b) => a.start - b.start);
+  const newArr = [];
+  const final = [];
+  let indexx = [];
+  let indxx = [];
+  for (let [index, value] of arr.entries()) {
+    if (!newArr.includes(value.start)) {
+      newArr.push(value.start);
+      indexx.push(index);
+    }
+  }
+  const said = indexx.map((item) => arr[item]);
+  if (said) {
+    said.forEach((item, i) => {
+      if (!final.includes(item.stop)) {
+        final.push(item.stop);
+        indxx.push(i);
+      }
+    });
+  }
+
+  const latest = indxx.map((item) => said[item]);
+
+  const res = [0];
+  for (const item of latest) {
+    if (item.start) {
+      arr.filter((time) => {
+        if ([item.start, item.stop].includes(time.start)) {
+          if (time.start >= res[res.length - 1]) {
+            res.push(time.stop);
+          }
+        }
+      });
+    }
+  }
+
+  const result = {
+    array: arr,
+    saidArr: said,
+    items: latest,
+    number: {
+      len: res.length - 1,
+      array: res.filter((item) => item !== res[0]),
+    },
+    final: final,
+    index: indxx,
+  };
+
+  return `You can attend a maximum of ${result.number.len} ${
+    result.number.len === 1 ? "event" : "events"
+  } at this time from the following sources of data ${a} and ${c}`;
+}
+function createArray(a = [], b = []) {
+  const response = [];
+  for (let i = 0; i < a.length; i++) {
+    let element = b[i];
+    let element2 = a[i];
+    if (element2 && element) {
+      let obj = { start: element2, stop: element };
+      response.push(obj);
+    }
+  }
+  return response;
+}
+
 // "build": "npx webpack --config webpack.config.js",
 
 export {
   createArray,
+  createArrays,
   filterArray,
   sortArray,
   uniqueCollection,
@@ -173,8 +241,9 @@ export {
   convertToArrayofNumber,
   getMaximumEvents,
   checkIfSecondArrayIsGreaterThanFirstArray,
+  getEvents,
 };
 
 // const a_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // const b_1 = [4, 5, 7, 9, 9, 7, 9, 9, 10];
-console.log(getMaximumEvents([1, 3, 4, 6, 8], [3, 6, 9, 7, 9]));
+// console.log(getMaximumEvents([1, 3, 4, 6, 8], [3, 6, 9, 7, 9]));
